@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+main {
+  padding: 20px;
+}
+
+h2 {
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.founders, .about, .jobs, .databases {
+  margin-bottom: 40px;
+}
+
+.founder-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.founder, .co-founder {
+  text-align: center;
+}
+
+.founder img, .co-founder img {
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.founder img:hover, .co-founder img:hover {
+  transform: scale(1.2); /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
+
+.about p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.jobs ul {
+  list-style-type: none;
+  columns: 2;
+}
+
+.jobs ul li {
+  margin-bottom: 5px;
+}
+
+.database-links {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #003366;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0055a5;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}
