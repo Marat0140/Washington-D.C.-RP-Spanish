@@ -2,14 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path'); // Necesario para servir archivos estáticos
 
 // Configuración del servidor
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+
+// Servir archivos estáticos de la carpeta 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Conexión a MongoDB Atlas
 mongoose.connect('mongodb+srv://maratcamargo06:Apoloamigo1@washingtondcrpspanish.f5jdo.mongodb.net/?retryWrites=true&w=majority&appName=WashingtonDCRPSpanish')
@@ -88,6 +92,16 @@ app.delete('/delete/:id', async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
+});
+
+// Ruta para servir el archivo inicio.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'inicio.html'));
+});
+
+// Ruta para servir el archivo index.html
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Iniciar servidor
