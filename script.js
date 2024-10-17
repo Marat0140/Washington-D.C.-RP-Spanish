@@ -1,6 +1,6 @@
 async function buscarPersona() {
     const query = document.getElementById('search').value;
-    const response = await fetch(`http://localhost:3000/search?id=${query}&nombre=${query}`);
+    const response = await fetch(`https://api-de-washington-dc-rp-spanish.onrender.com/search?id=${query}&nombre=${query}`);
     const personas = await response.json();
 
     const lista = document.getElementById('resultados');
